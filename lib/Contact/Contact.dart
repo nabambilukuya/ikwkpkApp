@@ -39,20 +39,12 @@ class _ContactState extends State<Contact> {
               ),
               Gender(hintText: 'GENDER'),
               StandardTextFormField(hintText: 'EMAIL (OPTIONAL)'),
-              Row(
-                children: <Widget>[
-                  Country(),
-                  States(),
-                ],
-              ),
+              Country(),
+              States(),
               StandardTextFormField(hintText: 'ADDRESS 1'),
               StandardTextFormField(hintText: 'ADDRESS 2'),
-              Row(
-                children: <Widget>[
-                  City(),
-                  StandardTextFormField(hintText: 'POSTCODE'),
-                ],
-              ),
+              City(),
+              StandardTextFormField(hintText: 'POSTCODE'),
               SubmitButton(action: () {}, name: 'NEXT'),
             ],
           ),
