@@ -10,12 +10,12 @@ class StandardTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
         decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: TextStyle(color: Colors.black),
+            labelText: hintText,
+            labelStyle: TextStyle(color: Colors.black54, fontSize: 12),
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: BorderSide(color: Colors.black54),
             )),
-        style: TextStyle(height: 2, fontSize: 15));
+        style: TextStyle(fontSize: 18));
   }
 }
 
@@ -44,7 +44,7 @@ class _SecuredTextFormFieldState extends State<SecuredTextFormField> {
 
   InputDecoration get decoration {
     UnderlineInputBorder underline() =>
-        UnderlineInputBorder(borderSide: BorderSide(color: Colors.black));
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.black54));
 
     Icon icon() => Icon(
           isSecured == true ? Icons.visibility_off : Icons.visibility,
@@ -53,6 +53,7 @@ class _SecuredTextFormFieldState extends State<SecuredTextFormField> {
 
     return InputDecoration(
       hintText: widget.hintText,
+      hintStyle: TextStyle(fontSize: 12, color: Colors.black54),
       enabledBorder: underline(),
       suffixIcon: IconButton(
         onPressed: () => iconTapped,
@@ -115,17 +116,19 @@ class _ProfilePictureState extends State<ProfilePicture> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 47,
-      height: 47,
+      width: 35,
+      height: 35,
       decoration: BoxDecoration(
         border: Border.all(
-          width: 2.0,
+          color: Colors.black54,
+          width: 0.5,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(6),
       ),
       child: Icon(
         Icons.camera_alt,
-        size: 30.0,
+        size: 20.0,
+        color: Colors.black54,
       ),
     );
   }
@@ -139,14 +142,17 @@ class TextTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Text(
+        text,
 
-      style: TextStyle(
-        fontSize: 12,
-        height: 2.0,
+        style: TextStyle(
+          fontSize: 12,
+          height: 2.0,
+        ),
+        // onChanged: (value) {},
       ),
-      // onChanged: (value) {},
     );
   }
 }
@@ -172,17 +178,17 @@ class FieldState extends State<Field> {
 
   InputDecoration get decoration {
     UnderlineInputBorder underline() =>
-        UnderlineInputBorder(borderSide: BorderSide(color: Colors.black));
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.black54));
 
     Icon icon() => Icon(
           Icons.camera_alt,
-          color: Colors.black,
-          size: 25.0,
+          color: Colors.black54,
+          size: 20.0,
         );
 
     return InputDecoration(
-      hintText: widget.hintText,
-      hintStyle: TextStyle(color: Colors.black),
+      labelText: widget.hintText,
+      labelStyle: TextStyle(color: Colors.black54, fontSize: 12),
       enabledBorder: underline(),
       suffixIcon: IconButton(
         onPressed: () => iconTapped,

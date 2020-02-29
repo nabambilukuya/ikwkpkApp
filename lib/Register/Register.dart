@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'Widget/background.dart';
@@ -8,7 +7,7 @@ import 'Widget/registerHeader.dart';
 
 // Constant -----------------------------------------------------------------------------\
 const String screenDesc =
-    'Please Register your details to access all i-KWKPK benefits and privileges';
+    'Register your details to access iKWKPK benefits and privileges';
 const String screenName = "REGISTER";
 
 class Register extends StatefulWidget {
@@ -28,27 +27,24 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundBody(
+        title: screenName,
+        description: screenDesc,
         body: Container(
-          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 40),
           child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            RegisterHeader(
-              description: screenDesc,
-              title: screenName,
-            ),
-            ProfilePicture(),
-            TextTitle(text:"YOUR PICTURE"),
-            StandardTextFormField(hintText: 'FIRST NAME'),
-            StandardTextFormField(hintText: 'LAST NAME'),
-            StandardTextFormField(hintText: 'MOBILE PHONE NO'),
-            Field (hintText: 'IC NUMBER'),
-            SecuredTextFormField(hintText: 'PASSWORD'),
-            Switcher(hintText: "I AM SARAWAKIAN"),
-            SubmitButton(action: () {}, name: screenName),
-            
-          ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              TextTitle(text: "YOUR PICTURE"),
+              ProfilePicture(),
+              StandardTextFormField(hintText: 'FIRST NAME'),
+              StandardTextFormField(hintText: 'LAST NAME'),
+              StandardTextFormField(hintText: 'MOBILE PHONE NO'),
+              Field(hintText: 'IC NUMBER & PICTURE'),
+              SecuredTextFormField(hintText: 'PASSWORD'),
+              Switcher(hintText: "I AM SARAWAKIAN"),
+              SubmitButton(action: () {}, name: screenName),
+            ],
           ),
         ),
       ),

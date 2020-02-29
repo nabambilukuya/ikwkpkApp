@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../constant.dart';
 
 // Constant -------------------------------------------------------------------------------\
 const String appName = '';
@@ -57,7 +60,6 @@ class _Title extends StatelessWidget {
         fontWeight: FontWeight.bold,
         fontSize: 35,
         height: 1.5,
-        
       ),
     );
   }
@@ -72,7 +74,6 @@ class _Name extends StatelessWidget {
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20,
-        
       ),
     );
   }
@@ -91,7 +92,6 @@ class _Description extends StatelessWidget {
       style: TextStyle(
         height: 1.5,
         fontSize: 12,
-        
       ),
     );
   }

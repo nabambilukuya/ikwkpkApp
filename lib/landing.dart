@@ -5,11 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 const String MALAY_TITLE = "SELAMAT DATANG KE";
 const String MALAY_HEADER = "KWKPK Perkhidmatan Atas Talian 24/7";
-const String MALAY_SUBTITLE = "Menjaga anda, keluarga dan komuniti anda.";
+const String MALAY_SUBTITLE = "Menjaga anda, keluarga dan";
+const String MALAY_SUBTITLE2 = "komuniti anda.";
 const String ENG_TITLE = "WELCOME TO";
-const String ENG_HEADER = "KWKPK 24/7 Online Services";
-const String ENG_SUBTITLE =
-    "Looking after you, your family and your community.";
+const String ENG_HEADER = "KWKPK 24/7 ";
+const String ENG_SUBHEADER = "Online Services";
+const String ENG_SUBTITLE = "Looking after you, your family";
+const String ENG_SUBTITLE2 = "and your community.";
 
 class Landing extends StatefulWidget {
   @override
@@ -23,6 +25,8 @@ class _LandingState extends State<Landing> {
       body: Container(
         decoration: BoxDecoration(
           image: new DecorationImage(
+              colorFilter: new ColorFilter.mode(
+                  Colors.white.withOpacity(0.3), BlendMode.dstATop),
               image: new AssetImage('assets/landing_background.png'),
               fit: BoxFit.cover),
         ),
@@ -31,20 +35,25 @@ class _LandingState extends State<Landing> {
           children: <Widget>[
             _Header(),
             Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    _Title(text: MALAY_TITLE),
-                    _HeaderText(text: MALAY_HEADER),
-                    _SubTitle(text: MALAY_SUBTITLE),
-                    _Divider(),
-                    _Title(text: ENG_TITLE),
-                    _HeaderText(text: ENG_HEADER),
-                    _SubTitle(text: ENG_SUBTITLE),
-                  ],
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      _Title(text: MALAY_TITLE),
+                      _HeaderText(text: MALAY_HEADER),
+                      _SubTitle(text: MALAY_SUBTITLE),
+                      _SubTitle(text: MALAY_SUBTITLE2),
+                      _Divider(),
+                      _Title(text: ENG_TITLE),
+                      _HeaderText(text: ENG_HEADER),
+                      _HeaderText(text: ENG_SUBHEADER),
+                      _SubTitle(text: ENG_SUBTITLE),
+                      _SubTitle(text: ENG_SUBTITLE2),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -163,7 +172,7 @@ class _Title extends StatelessWidget {
         style: GoogleFonts.montserrat(
           fontSize: 15,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
     );
@@ -180,7 +189,7 @@ class _SubTitle extends StatelessWidget {
       text,
       style: GoogleFonts.montserrat(
         fontSize: 18,
-        color: Colors.white,
+        color: Colors.black,
       ),
     );
   }
@@ -199,7 +208,7 @@ class _HeaderText extends StatelessWidget {
         style: GoogleFonts.montserrat(
           fontSize: 28,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
     );
@@ -213,7 +222,7 @@ class _Divider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 32),
-      color: Colors.white,
+      color: Colors.black,
       height: 3,
       width: 100,
     );
