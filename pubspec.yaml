@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_country_picker: ^0.1.6
+  google_fonts: ^0.3.9
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -43,11 +44,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - assets/iKWKPK.png
+      - assets/landing_background.png
       - assets1/background.png
       - assets1/messaging.png
       - assets1/try.png
       - assets2/Background.png
       - assets2/Logo.png
+      - assets2/logo_text.png
       - assets3/LOGIN.png
       - assets4/ONBOARD1.png
       - assets4/ONBOARD2.png
